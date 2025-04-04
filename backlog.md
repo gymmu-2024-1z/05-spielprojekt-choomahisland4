@@ -10,3 +10,11 @@
 - [ ] Komponenten für Items hinzufügen.
 - [ ] Dialogsystem hinzufügen.
 - [ ] Inventar hinzufügen.
+
+- [ ] Spielnamem bestimmen
+- [ ] Charaktere erstellen (Hauptcharakter und die NPCs)
+- [ ] Den Charakteren Waffen programmieren
+- [ ] Map designen (weisses Haus)
+- [ ] Hindernisse für Levels erstellen
+- [ ] Quests erstellen bzw ausdenken
+- [ ]
