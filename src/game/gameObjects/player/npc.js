@@ -8,7 +8,7 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
   move = "left"
 
   constructor(scene, x, y) {
-    super(scene, x, y, "player")
+    super(scene, x, y, "npc")
     this.scene.add.existing(this)
     this.scene.physics.add.existing(this, false)
     this.body.collideWorldBounds = false
