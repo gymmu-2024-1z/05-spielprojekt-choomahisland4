@@ -34,13 +34,13 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 8, 8, 8, 0, 8, 8, 8, 6, 0, 0,
-            0, 0, 0, 2, 2, 5, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0,
-            0, 0, 0, 2, 2, 0, 6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0,
-            0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0,
-            0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 5, 6, 0,
-            0, 0, 0, 2, 2, 5, 5, 5, 5, 5, 2, 2, 6, 6, 6, 6, 6, 6, 5, 0,
-            0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -86,195 +86,12 @@
          "visible":true,
          "x":0,
          "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":4,
-         "name":"Items",
-         "objects":[
-                {
-                 "gid":3,
-                 "height":32,
-                 "id":1,
-                 "name":"Mushroom",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":10
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":20
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":160,
-                 "y":256
-                }, 
-                {
-                 "gid":3,
-                 "height":32,
-                 "id":2,
-                 "name":"Mushroom",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":10
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":20
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":320,
-                 "y":256
-                }, 
-                {
-                 "gid":3,
-                 "height":32,
-                 "id":3,
-                 "name":"Mushroom",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":10
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":20
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":544,
-                 "y":288
-                }, 
-                {
-                 "gid":4,
-                 "height":32,
-                 "id":4,
-                 "name":"Flower",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":20
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":50
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":512,
-                 "y":320
-                }, 
-                {
-                 "gid":4,
-                 "height":32,
-                 "id":5,
-                 "name":"Flower",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":20
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":50
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":512,
-                 "y":224
-                }, 
-                {
-                 "gid":4,
-                 "height":32,
-                 "id":6,
-                 "name":"Flower",
-                 "properties":[
-                        {
-                         "name":"damageHp",
-                         "type":"int",
-                         "value":20
-                        }, 
-                        {
-                         "name":"restoreHp",
-                         "type":"int",
-                         "value":50
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":288,
-                 "y":320
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":5,
-         "name":"Doors",
-         "objects":[
-                {
-                 "gid":7,
-                 "height":32,
-                 "id":7,
-                 "name":"Cave",
-                 "properties":[
-                        {
-                         "name":"goToWorld",
-                         "type":"string",
-                         "value":"level-02"
-                        }, 
-                        {
-                         "name":"needKey",
-                         "type":"string",
-                         "value":"level-02"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":416,
-                 "y":192
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
         }],
  "nextlayerid":6,
  "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.11.0",
+ "tiledversion":"1.11.2",
  "tileheight":32,
  "tilesets":[
         {
