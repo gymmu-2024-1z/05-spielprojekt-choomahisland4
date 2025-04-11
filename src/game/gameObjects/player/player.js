@@ -49,37 +49,36 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
   setControls() {
     this.cursor = this.scene.input.keyboard.createCursorKeys()
-    this.A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A)
-    this.S = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S)
-    this.D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
-    this.W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
+    this.A = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A)
+    this.S = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S)
+    this.D = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
+    this.W = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
   }
 
   update() {
-    const { A, D, W, S } = this.cursor
     let isIdle = true
 
     this.body.setVelocityX(0)
     this.body.setVelocityY(0)
 
     if (this.A.isDown) {
-      this.body.setVelocityX(-this.speed)
+      this.body.setVelocityX(-150)
       if (isIdle) this.anims.play("player_left", true)
       isIdle = false
     }
     if (this.D.isDown) {
-      this.body.setVelocityX(this.speed)
+      this.body.setVelocityX(150)
       if (isIdle) this.anims.play("player_right", true)
       isIdle = false
     }
 
     if (this.W.isDown) {
-      this.body.setVelocityY(-this.speed)
+      this.body.setVelocityY(-150)
       if (isIdle) this.anims.play("player_up", true)
       isIdle = false
     }
     if (this.S.isDown) {
-      this.body.setVelocityY(this.speed)
+      this.body.setVelocityY(150)
       if (isIdle) this.anims.play("player_down", true)
       isIdle = false
     }
