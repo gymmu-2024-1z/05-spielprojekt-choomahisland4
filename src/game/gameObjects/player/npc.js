@@ -3,11 +3,11 @@ import Phaser from "phaser"
 export default class NPC extends Phaser.Physics.Arcade.Sprite {
   hp = 10
   maxHp = 100
-  #speed = 60 // langsamer als der Spieler
+  #speed = 100
   stepsLeft = 60
   move = "left"
 
-  constructor(scene, x, y, player) {
+  constructor(scene, x, y) {
     super(scene, x, y, "npc")
     this.scene.add.existing(this)
     this.scene.physics.add.existing(this, false)
@@ -15,8 +15,6 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
     this.setOrigin(0.5, 0.5)
     this.setSize(24, 24, false)
     this.setOffset(4, 8)
-
-    this.player = player
   }
 
   /**
@@ -27,7 +25,7 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
    * @param {integer} value Die Geschwindigkeit der Spielers.
    */
   set speed(value) {
-    this.#speed = Math.min(value, 700)
+    this.#speed = Math.min(value, 960)
     this.#speed = Math.max(0, this.#speed)
   }
 
@@ -38,32 +36,65 @@ export default class NPC extends Phaser.Physics.Arcade.Sprite {
 
   update() {
     const { body } = this
-    body.setVelocity(0)
+    let isIdle = true
 
-    const dx = this.player.x - this.x
-    const dy = this.player.y - this.y
-    const distance = Math.sqrt(dx * dx + dy * dy)
-    h
-    // NPC folgt immer dem Spieler,ist aber langsamer
-    if (distance > 1) {
-      body.setVelocityX((dx / distance) * this.speed)
-      body.setVelocityY((dy / distance) * this.speed)
+    this.stepsLeft--
+    if (this.stepsLeft <= 0) {
+      this.move = getRandomDirection()
+      this.stepsLeft = 60 + Math.floor(Math.random() * 60)
+    }
 
-      // Animation wird gewählt, je nachdem wie der Spieler läuft
-      if (Math.abs(dx) > Math.abs(dy)) {
-        this.anims.play(dx > 0 ? "player_right" : "player_left", true)
-      } else {
-        this.anims.play(dy > 0 ? "player_down" : "player_up", true)
-      }
-    } else {
-      this.anims.play("player_idle", true)
+    this.body.setVelocityX(0)
+    this.body.setVelocityY(0)
+
+    if (this.move === "left") {
+      body.setVelocityX(-this.speed)
+      if (isIdle) this.anims.play("npc_left", true)
+      isIdle = false
+    }
+    if (this.move === "right") {
+      this.body.setVelocityX(this.speed)
+      if (isIdle) this.anims.play("npc_right", true)
+      isIdle = false
+    }
+
+    if (this.move === "up") {
+      body.setVelocityY(-this.speed)
+      if (isIdle) this.anims.play("npc_up", true)
+      isIdle = false
+    }
+    if (this.move === "down") {
+      body.setVelocityY(this.speed)
+      if (isIdle) this.anims.play("npc_down", true)
+      isIdle = false
+    }
+
+    if (isIdle) {
+      this.anims.play("npc_idle", true)
     }
   }
 
-  heal(value = 0) {
-    this.hp += value
+  heal(value) {
+    if (value == null) value = 0
+    this.hp = this.hp + value
     if (this.hp > this.maxHp) {
-      this.hp = this.maxHp
+      this.hp = this.mapHp
     }
+  }
+}
+
+function getRandomDirection() {
+  const r = Math.floor(4 * Math.random())
+  switch (r) {
+    case 0:
+      return "left"
+    case 1:
+      return "right"
+    case 2:
+      return "up"
+    case 3:
+      return "down"
+    default:
+      return "idle"
   }
 }
