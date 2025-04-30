@@ -95,7 +95,7 @@ export default class Level01 extends Base2DScene {
 
     if (this.player.hp <= 0) {
       // Wenn Player 0 Leben hat, startet eine GameOver Szene
-      this.scene.start("GameOverscene")
+      this.scene.start("GameOverScene")
     }
   }
 }
