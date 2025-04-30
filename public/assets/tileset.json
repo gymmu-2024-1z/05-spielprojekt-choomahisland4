@@ -1,0 +1,23 @@
+{ "frames": {
+   "tileset.png": {
+    "frame": { "x": 0, "y": 0, "w": 136, "h": 68 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 136, "h": 68 },
+    "sourceSize": { "w": 136, "h": 68 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.1-dev",
+  "format": "RGBA8888",
+  "size": { "w": 136, "h": 68 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}
