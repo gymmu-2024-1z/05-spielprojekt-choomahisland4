@@ -122,11 +122,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   damage(value) {
     if (value == null) value = 0
     this.hp = this.hp - value
-    if (this.hp <= 0) {
-      // TODO: Game-Over Mechanik implementieren.
-
-      this.scene.start("loading")
-    }
 
     // Gleich wie bei `heal()`
     EVENTS.emit("update-hp", this.hp)
