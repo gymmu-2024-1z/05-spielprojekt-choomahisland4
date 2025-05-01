@@ -46,10 +46,7 @@ export default class GameOverScene extends Phaser.Scene {
   create() {
     this.createAnimations()
 
-    this.add.text(320, 240, "Du bist gestorben.").setOrigin(0.5, 0.5)
-    this.add
-      .text(320, 260, "Drucke die Leertaste um das Spiel neu zu starten.")
-      .setOrigin(0.5, 0.5)
+    this.add.text(320, 240, "GAME OVER.").setOrigin(0.5, 4)
   }
 
   createAnimations() {
