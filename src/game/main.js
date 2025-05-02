@@ -26,7 +26,7 @@ const config = {
     Level02,
     Level03,
     GameOverScene,
-    Music,
+    HintergrundMusik,
   ], // Die Szenen des Spiels, hier können noch weitere Szenen angehängt werden.
   physics: {
     default: "arcade",
