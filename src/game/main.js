@@ -7,6 +7,7 @@ import Level03 from "./scenes/levels/level-03.js"
 import UIScene from "./scenes/ui-scene.js"
 import DebugScene from "./scenes/debug-scene.js"
 import GameOverScene from "./scenes/Gameover-scene.js"
+import HintergrundMusik from "./scenes/audio.js"
 const config = {
   type: Phaser.AUTO,
   scale: {
@@ -16,6 +17,7 @@ const config = {
   width: 640, // Sollten möglichst vielfache von 32 sein, da unsere Tileset 32x32 Pixel gross sind.
   height: 480, // Gleich wie bei width.
   parent: "game-canvas", // Die ID von dem HTML-Element, in das das Spiel gezeichnet wird.
+
   scene: [
     LoadingScene,
     UIScene,
@@ -24,6 +26,7 @@ const config = {
     Level02,
     Level03,
     GameOverScene,
+    Music,
   ], // Die Szenen des Spiels, hier können noch weitere Szenen angehängt werden.
   physics: {
     default: "arcade",

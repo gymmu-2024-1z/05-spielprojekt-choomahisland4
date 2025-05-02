@@ -22,6 +22,7 @@ export default class Level01 extends Base2DScene {
    * Szene benötigt werden.
    */
   preload() {
+    this.load.audio("HintergrundMusik", ["assets/audio/musik-hintergrund.mp3"])
     // Lade die Karte für das aktuelle Level. Der erste Parameter ist der Name
     // unter dem die Karte gespeichert wird. Der zweite Parameter ist die
     // Kartendatei mit allen Daten drin.
@@ -43,6 +44,9 @@ export default class Level01 extends Base2DScene {
     // TODO: Möchten wir zusätzliche Layers von der Karte ertellen lassen, oder
     // spezifische Spielobjekte erstellen, dann können wir das hier machen.
     // Besser wäre aber die jeweiligen Methoden zu überschreiben.
+    this.HintergrundMusik = this.sound.add("HintergrundMusik")
+    this.HintergrundMusik.loop = true
+    this.HintergrundMusik.play()
   }
 
   /**
