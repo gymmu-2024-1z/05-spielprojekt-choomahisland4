@@ -125,6 +125,13 @@ export default class Base2DScene extends Phaser.Scene {
       () => true,
       this,
     )
+    this.physics.add.overlap(
+      this.player,
+      this.npcs,
+      this.collideWithNPC,
+      () => true,
+      this,
+    )
 
     this.physics.add.collider(
       this.player,
@@ -133,6 +140,15 @@ export default class Base2DScene extends Phaser.Scene {
       () => true,
       this,
     )
+  }
+
+  collideWithNPC(player, npc) {
+    npc.destroy()
+    player.damage(20)
+
+    if (this.player.hp <= 0) {
+      this.scene.start("loading")
+    }
   }
 
   npcCollideObstacles(npc, obstacle) {

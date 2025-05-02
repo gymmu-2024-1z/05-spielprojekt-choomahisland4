@@ -49,33 +49,36 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
   setControls() {
     this.cursor = this.scene.input.keyboard.createCursorKeys()
+    this.A = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A)
+    this.S = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S)
+    this.D = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
+    this.W = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W)
   }
 
   update() {
-    const { left, right, up, down } = this.cursor
     let isIdle = true
 
     this.body.setVelocityX(0)
     this.body.setVelocityY(0)
 
-    if (left.isDown) {
-      this.body.setVelocityX(-this.speed)
+    if (this.A.isDown) {
+      this.body.setVelocityX(-150)
       if (isIdle) this.anims.play("player_left", true)
       isIdle = false
     }
-    if (right.isDown) {
-      this.body.setVelocityX(this.speed)
+    if (this.D.isDown) {
+      this.body.setVelocityX(150)
       if (isIdle) this.anims.play("player_right", true)
       isIdle = false
     }
 
-    if (up.isDown) {
-      this.body.setVelocityY(-this.speed)
+    if (this.W.isDown) {
+      this.body.setVelocityY(-150)
       if (isIdle) this.anims.play("player_up", true)
       isIdle = false
     }
-    if (down.isDown) {
-      this.body.setVelocityY(this.speed)
+    if (this.S.isDown) {
+      this.body.setVelocityY(150)
       if (isIdle) this.anims.play("player_down", true)
       isIdle = false
     }
@@ -119,10 +122,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   damage(value) {
     if (value == null) value = 0
     this.hp = this.hp - value
-    if (this.hp <= 0) {
-      // TODO: Game-Over Mechanik implementieren.
-      this.hp = 0
-    }
 
     // Gleich wie bei `heal()`
     EVENTS.emit("update-hp", this.hp)

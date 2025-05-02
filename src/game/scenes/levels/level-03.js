@@ -19,4 +19,13 @@ export default class Level03 extends Base2DScene {
   create() {
     super.create("map-level-03")
   }
+  update() {
+    super.update()
+
+    if (this.player.hp <= 0) {
+      // Wenn Player 0 Leben hat, startet eine GameOver Szene
+      this.scene.start("GameOverScene")
+      this.HintergrundMusik.stop()
+    }
+  }
 }

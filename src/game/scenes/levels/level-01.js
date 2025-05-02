@@ -22,6 +22,7 @@ export default class Level01 extends Base2DScene {
    * Szene benötigt werden.
    */
   preload() {
+    this.load.audio("HintergrundMusik", ["assets/audio/musik-hintergrund.mp3"])
     // Lade die Karte für das aktuelle Level. Der erste Parameter ist der Name
     // unter dem die Karte gespeichert wird. Der zweite Parameter ist die
     // Kartendatei mit allen Daten drin.
@@ -43,6 +44,9 @@ export default class Level01 extends Base2DScene {
     // TODO: Möchten wir zusätzliche Layers von der Karte ertellen lassen, oder
     // spezifische Spielobjekte erstellen, dann können wir das hier machen.
     // Besser wäre aber die jeweiligen Methoden zu überschreiben.
+    this.HintergrundMusik = this.sound.add("HintergrundMusik")
+    this.HintergrundMusik.loop = true
+    this.HintergrundMusik.play()
   }
 
   /**
@@ -77,17 +81,26 @@ export default class Level01 extends Base2DScene {
       // passieren soll.
       // Hier wird der Spieler halb so gross, und mit jedem Frame wird er wieder
       // normaler. Nach 3 Sekunden erreicht er seine normale Grösse.
-      // this.tweens.addCounter({
-      //   from: 0.5,
-      //   to: 1,
-      //   ease: "Linear",
-      //   duration: 3000,
-      //   repeat: 0,
-      //   onUpdate: (tween) => {
-      //     const val = tween.getValue()
-      //     this.player.setScale(val)
-      //   },
-      // })
+      this.tweens.addCounter({
+        from: 0.5,
+        to: 1,
+        ease: "Linear",
+        duration: 3000,
+        repeat: 0,
+        onUpdate: (tween) => {
+          const val = tween.getValue()
+          this.player.setScale(val)
+        },
+      })
+    }
+  }
+  update() {
+    super.update()
+
+    if (this.player.hp <= 0) {
+      // Wenn Player 0 Leben hat, startet eine GameOver Szene
+      this.scene.start("GameOverScene")
+      this.HintergrundMusik.stop()
     }
   }
 }
